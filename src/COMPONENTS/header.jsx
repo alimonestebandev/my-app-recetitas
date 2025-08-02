@@ -11,7 +11,7 @@ function Header() {
       </div>
       <div className="search-container">
         <input className="input-search" type="text" />
-        <button className="btn-search">
+        <button title="Buscar" className="btn-search">
           <SearchIcon></SearchIcon>
         </button>
       </div>
