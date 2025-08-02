@@ -4,11 +4,11 @@ function ItemPreview({
   urlImg = "https://uxwing.com/wp-content/themes/uxwing/download/food-and-drinks/food-dinner-icon.png",
 }) {
   return (
-    <button className="item-preview">
+    <button title="ver más" className="item-preview">
       <div>
         <img className="image-preview" src={urlImg} alt="" />
       </div>
-      <div>
+      <div className="data">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
