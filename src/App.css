@@ -4,39 +4,39 @@
   padding: 2rem;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.central-container {
+  max-width: 800px;
+  margin: auto;
+  border-bottom: 1px solid #b4b4b4;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.item-preview .image-preview {
+  height: 100%;
+  width: 100%;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.item-preview {
+  cursor: pointer;
+  min-height: 130px;
+  gap: 10px;
+  text-align: start;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background: white;
+  border: 1px solid #b4b4b4;
+  border-bottom: 0px;
+  width: 100%;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.item-preview:hover {
+  background: whitesmoke;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.item-preview h3 {
+  color: blue;
+  margin: 0;
+  margin-top: 1px;
+  padding: 0;
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.item-preview p {
+  color: gray;
+  margin: 0;
+  margin-top: 1px;
+  padding: 0;
 }
