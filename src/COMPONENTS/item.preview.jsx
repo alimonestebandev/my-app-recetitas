@@ -16,8 +16,8 @@ function ItemPreview({
         <p>{description}</p>
       </div>
       <div className="data-time">
-        <p>Creado por: {author || "undefined"} |</p>
-        <p>Fecha: {createdAt}</p>
+        <p>Creado por: {author || "undefined"}</p>
+        {createdAt != "undefined" && <p>| Fecha: {createdAt}</p>}
       </div>
     </button>
   );
