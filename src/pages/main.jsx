@@ -1,12 +1,33 @@
+import { useEffect, useState } from "react";
 import Header from "../COMPONENTS/header.jsx";
 import ItemPreview from "../COMPONENTS/item.preview.jsx";
 
 function Main() {
+  const [items, setItems] = useState([]);
+
+  const getDATA = () => {
+    fetch("src/DATA/api.json")
+      .then((res) => res.json())
+      .then((data) => setItems(data))
+      .catch((error) => console.error("Error al obtener el JSON:", error));
+  };
+  useEffect(() => getDATA(), []);
+
   return (
     <div>
+      <button onClick={() => console.log(items)}>asdasd</button>
       <div className="central-container">
         <Header />
-        <ItemPreview
+        {items.map((e, index) => {
+          return (
+            <ItemPreview
+              key={index}
+              title={e.title}
+              description={e.description}
+            ></ItemPreview>
+          );
+        })}
+        {/* <ItemPreview
           title="Puré de papas con milanesa a caballo"
           description="Exquisito pure de papas hervidas, coccion lenta y bla bla bla"
         />
@@ -19,7 +40,7 @@ function Main() {
           urlImg="https://media.ambito.com/p/136b65f52fb3f65f745783fb24ebe77a/adjuntos/239/imagenes/042/492/0042492372/730x0/smart/infusionesjpg.jpg"
           title="Infusiones relajantes 💜"
           description="ideales para ansiedad, estres y malestar general"
-        />
+        /> */}
       </div>
     </div>
   );
