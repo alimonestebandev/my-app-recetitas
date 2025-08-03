@@ -4,18 +4,20 @@ import ItemPreview from "../COMPONENTS/item.preview.jsx";
 import store from "../STORE/main.store.js";
 import Loading from "../COMPONENTS/loading.jsx";
 
-import stateHook from "../CUSTOM_HOOKS/state.jsx";
+import useStateLoading from "../CUSTOM_HOOKS/state.jsx";
 
 function Main() {
-  const [items, setItems] = useState([]);
-  const { state, changeState } = stateHook();
-  const { setRecipeSelected } = store();
+  const { state, changeState } = useStateLoading();
+  const { setRecipeSelected, setItemsStore, items } = store();
 
   const getDATA = () => {
     fetch("src/DATA/api.json")
       .then((res) => res.json())
       .then((data) => {
-        setItems(data);
+        if (items <= 0) {
+          setItemsStore(data);
+          console.log(data);
+        }
         changeState();
       })
       .catch((error) => console.error("Error al obtener el JSON:", error));
@@ -27,7 +29,7 @@ function Main() {
       <div className="central-container">
         <Header />
         {!state ? (
-          items.map((e, index) => {
+          items?.map((e, index) => {
             return (
               <ItemPreview
                 setRecipeSelected={setRecipeSelected}
