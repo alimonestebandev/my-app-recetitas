@@ -1,0 +1,23 @@
+.form-create-recipe {
+  display: grid;
+  text-align: left;
+}
+.form-create-recipe input {
+  height: 30px;
+}
+.form-create-recipe h4 {
+  font-weight: lighter;
+  margin: 0;
+  margin: 10px 0 10px 0px;
+}
+.form-create-recipe textarea {
+  resize: none;
+  height: 200px;
+}
+.form-create-recipe .btn-post {
+  height: 40px;
+  margin-top: 15px;
+  background: rgb(45, 123, 212);
+  border: none;
+  outline: none;
+}
