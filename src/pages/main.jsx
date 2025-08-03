@@ -19,7 +19,6 @@ function Main() {
 
   return (
     <div>
-      <button onClick={() => console.log(items)}>Mostrar JSON</button>
       <div className="central-container">
         <Header />
         {items.map((e, index) => {
