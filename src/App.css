@@ -165,3 +165,14 @@
     transform: scale(1);
   }
 }
+.filter-btn-arrows {
+  background: none;
+  right: 10px;
+  position: absolute;
+  color: black;
+  border: none;
+  margin: 0;
+}
+.filter-btn-arrows:hover {
+  color: blue;
+}
