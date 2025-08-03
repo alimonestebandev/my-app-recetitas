@@ -4,6 +4,7 @@
   text-align: center;
 }
 .central-container {
+  position: relative;
   max-width: 800px;
   margin: auto;
   border-bottom: 1px solid #b4b4b4;
