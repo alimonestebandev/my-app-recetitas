@@ -19,6 +19,7 @@ function Main() {
 
   return (
     <div>
+      {/* <button onClick={() => console.log(items)}>Mostrar JSON</button> */}
       <div className="central-container">
         <Header />
         {items.map((e, index) => {
@@ -26,12 +27,7 @@ function Main() {
             <ItemPreview
               setRecipeSelected={setRecipeSelected}
               item={e}
-              createdAt={e.createdAt}
-              author={e.author}
-              urlImg={e.urlImg}
               key={index}
-              title={e.title}
-              description={e.description}
             ></ItemPreview>
           );
         })}
