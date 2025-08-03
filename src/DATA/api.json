@@ -4,20 +4,26 @@
     "author": "Jorge",
     "title": "Puré de papas con milanesa a caballo",
     "description": "Exquisito pure de papas hervidas, coccion lenta y bla bla bla",
-    "createdAt": "2/8/2025"
+    "createdAt": "2/8/2025",
+    "instructions": "Lavar, pelar, cortar la papa, cocinar aprox 20 desde agua fría - colar, pisar, debe quedar sin grumos Agregar sal, pimienta, nuez moscada, una cucharada de queso rallado y una cucharada abundante de queso crema ",
+    "ingredients": "Papas, Milanesas, Huevos, 1 cucharada de queso crema"
   },
   {
     "id": 1,
     "author": "María Ester",
     "urlImg": "https://img-global.cpcdn.com/recipes/b401588469ec6bbe/640x640sq80/photo.webp",
     "title": "¡IMPRESIONÁ A TU VISITAS! | ¡Bizcochitos Caseros para el mate!",
-    "description": "¿Vienen visitas de repente y no tenes mucho tiempo? hacete estos bizcochitos ideales para unos buenos mates"
+    "description": "¿Vienen visitas de repente y no tenes mucho tiempo? hacete estos bizcochitos ideales para unos buenos mates",
+    "instructions": "Cocinalo asi y asa y asi asa sa sa",
+    "ingredients": "Harina 0000( cuatro ceros ), Agua, Sal y Grasa"
   },
   {
     "id": 1,
     "author": "CarlosVillamonte33",
     "urlImg": "https://media.ambito.com/p/136b65f52fb3f65f745783fb24ebe77a/adjuntos/239/imagenes/042/492/0042492372/730x0/smart/infusionesjpg.jpg",
     "title": "Infusiones relajantes 💜",
-    "description": "ideales para ansiedad, estres y malestar general"
+    "description": "ideales para ansiedad, estres y malestar general",
+    "instructions": "Colocamos tanto asi y asi y le ponemos agua tibia, dejamos reposar y tarán",
+    "ingredients": "Hierbas aromaticas, hierbas tal nombre y talnombre"
   }
 ]
