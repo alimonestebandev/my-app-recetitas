@@ -22,14 +22,17 @@ function CompleteRecipe() {
       </div>
       <h3 className="title">{item?.title}</h3>
       <p>{item?.description}</p>
-      <p>{item?.author}</p>
-      <div className="items">
-        <h2>Ingredientes: </h2>
-        <p>Sal, Azucar bla, bla ,ablas </p>
-      </div>
-      <div>
+      <p style={{ "font-weight": "bold" }}>Receta por: {item?.author}</p>
+      <p>{item?.createdAt}</p>
+      {item.ingredients && (
+        <div className="items">
+          <h2>Ingredientes: </h2>
+          <p>{item.ingredients} </p>
+        </div>
+      )}
+      <div style={{ "text-align": "left" }}>
         <h3>INSTRUCCIONES</h3>
-        <p></p>
+        <p>{item?.instructions}</p>
       </div>
     </div>
   );
