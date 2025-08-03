@@ -4,6 +4,9 @@
 }
 .form-create-recipe input {
   height: 30px;
+  color: black;
+  background: whitesmoke;
+  border: 1px solid black;
 }
 .form-create-recipe h4 {
   font-weight: lighter;
@@ -12,6 +15,9 @@
 }
 .form-create-recipe textarea {
   resize: none;
+  color: black;
+  background: whitesmoke;
+  border: 1px solid black;
   height: 200px;
 }
 .form-create-recipe .btn-post {
@@ -20,4 +26,6 @@
   background: rgb(45, 123, 212);
   border: none;
   outline: none;
+  color: white;
+  font-weight: bold;
 }
