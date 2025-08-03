@@ -1,0 +1,36 @@
+.image {
+  width: 100%;
+  object-fit: cover;
+  height: 500px;
+  border-radius: 5px;
+}
+.title {
+  font-size: 1.5rem;
+}
+
+.items {
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.items h2 {
+  margin: 0;
+  padding: 0;
+}
+.items p {
+  padding: 0;
+  margin: 0;
+}
+
+.btn-back {
+  position: absolute;
+  left: 0;
+  background: white;
+  color: black;
+  padding: 4px 2px 4px 2px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  border-bottom-right-radius: 10px;
+}
