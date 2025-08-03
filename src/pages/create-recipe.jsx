@@ -25,7 +25,16 @@ function CreateRecipe() {
 
     //Crea un item y lo añade a la lista de items global
 
+    var datetime = new Date();
+    datetime =
+      datetime.getUTCDate() +
+      "/" +
+      (datetime.getUTCMonth() + 1) +
+      "/" +
+      datetime.getUTCFullYear();
+
     const newObj = {
+      createdAt: datetime,
       id: items.length + 1,
       title,
       description,
