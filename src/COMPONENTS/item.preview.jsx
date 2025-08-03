@@ -1,10 +1,7 @@
 import store from "../STORE/main.store";
 import { Link } from "react-router-dom";
-function ItemPreview({
-  item,
-  urlImg = "https://uxwing.com/wp-content/themes/uxwing/download/food-and-drinks/food-dinner-icon.png",
-}) {
-  const { title, description, author, createdAt } = item;
+function ItemPreview({ item }) {
+  const { title, description, author, createdAt, urlImg } = item;
 
   const { setSelectedRecipe } = store();
 
@@ -20,7 +17,14 @@ function ItemPreview({
       className="item-preview"
     >
       <div>
-        <img className="image-preview" src={urlImg} alt="" />
+        <img
+          className="image-preview"
+          src={
+            urlImg ||
+            "https://uxwing.com/wp-content/themes/uxwing/download/food-and-drinks/food-dinner-icon.png"
+          }
+          alt=""
+        />
       </div>
       <div className="data">
         <h3>{title}</h3>
