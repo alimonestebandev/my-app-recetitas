@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import Header from "../COMPONENTS/header.jsx";
 import ItemPreview from "../COMPONENTS/item.preview.jsx";
 
+import store from "../STORE/main.store.js";
+
 function Main() {
   const [items, setItems] = useState([]);
+
+  const { setRecipeSelected } = store();
 
   const getDATA = () => {
     fetch("src/DATA/api.json")
@@ -15,12 +19,17 @@ function Main() {
 
   return (
     <div>
-      <button onClick={() => console.log(items)}>asdasd</button>
+      <button onClick={() => console.log(items)}>Mostrar JSON</button>
       <div className="central-container">
         <Header />
         {items.map((e, index) => {
           return (
             <ItemPreview
+              setRecipeSelected={setRecipeSelected}
+              item={e}
+              createdAt={e.createdAt}
+              author={e.author}
+              urlImg={e.urlImg}
               key={index}
               title={e.title}
               description={e.description}
