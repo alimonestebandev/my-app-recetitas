@@ -96,29 +96,28 @@ function Main() {
             <SwapVertIcon></SwapVertIcon>
           </button> */}
         </div>
-        {!state && filteredItems == null ? (
-          items?.map((e, index) => {
-            return (
-              <ItemPreview
-                setRecipeSelected={setRecipeSelected}
-                item={e}
-                key={index}
-              ></ItemPreview>
-            );
-          })
-        ) : filteredItems != null && filteredItems != [] ? (
-          filteredItems?.map((e, index) => {
-            return (
-              <ItemPreview
-                setRecipeSelected={setRecipeSelected}
-                item={e}
-                key={index}
-              ></ItemPreview>
-            );
-          })
-        ) : (
-          <Loading loading={state} />
-        )}
+        {!state && filteredItems == null
+          ? items?.map((e, index) => {
+              return (
+                <ItemPreview
+                  setRecipeSelected={setRecipeSelected}
+                  item={e}
+                  key={index}
+                ></ItemPreview>
+              );
+            })
+          : filteredItems != null &&
+            filteredItems != [] &&
+            filteredItems?.map((e, index) => {
+              return (
+                <ItemPreview
+                  setRecipeSelected={setRecipeSelected}
+                  item={e}
+                  key={index}
+                ></ItemPreview>
+              );
+            })}
+        {state && <Loading />}
       </div>
     </div>
   );
