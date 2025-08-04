@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import store from "../STORE/main.store.js";
 import { useState } from "react";
 
+import Header from "../COMPONENTS/header.jsx";
+
 function CreateRecipe() {
   const [created, setCreated] = useState(false);
   const { items, setItemsStore } = store();
@@ -27,15 +29,15 @@ function CreateRecipe() {
 
     var datetime = new Date();
     datetime =
-      datetime.getUTCDate() +
+      datetime.getDate() +
       "/" +
-      (datetime.getUTCMonth() + 1) +
+      (datetime.getMonth() + 1) +
       "/" +
-      datetime.getUTCFullYear();
+      datetime.getFullYear();
 
     const newObj = {
       createdAt: datetime,
-      id: items.length + 1,
+      id: items.length,
       title,
       description,
       author,
@@ -43,16 +45,26 @@ function CreateRecipe() {
       instructions,
       ingredients,
     };
-    setItemsStore([newObj, ...items]);
+
+    var newItems = [newObj, ...items];
+
+    setItemsStore(newItems);
     setCreated(true);
+
+    var saveJsonLocalStorageData = JSON.stringify(newItems);
+
+    localStorage.setItem("LOCAL-DATA", saveJsonLocalStorageData);
   };
 
   return (
     <div className="central-container">
+      <Header></Header>
       <BackHomeBtn></BackHomeBtn>
-      <h3 style={{ textAlign: "left", paddingTop: "50px" }}>
+      <h3 style={{ textAlign: "center", paddingTop: "50px" }}>
         Creá una nueva Receta
       </h3>
+      <p>(*) Campos obligatorios</p>
+
       <div>
         {created == false ? (
           <form
@@ -131,7 +143,6 @@ function CreateRecipe() {
             />
 
             <input className="btn-post" type="submit" value="Publicar" />
-            <p>(*) Campos obligatorios</p>
           </form>
         ) : (
           <div>
