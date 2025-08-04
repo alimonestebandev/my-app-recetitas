@@ -9,6 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import BreakfastDiningIcon from "@mui/icons-material/BreakfastDining";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import { Link } from "react-router-dom";
+import Footer from "../COMPONENTS/footer.jsx";
 
 function Main() {
   const { state, changeState } = useStateLoading();
@@ -33,7 +34,15 @@ function Main() {
         e.title
           .toUpperCase()
           .replace(" ", "")
-          .includes(words.target.value.toUpperCase().replace(" ", ""))
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .includes(
+            words.target.value
+              .toUpperCase()
+              .replace(" ", "")
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+          )
       );
       setFilteredItems(filterApply);
     } else {
@@ -42,6 +51,13 @@ function Main() {
   };
 
   const getDATA = () => {
+    if (localStorage.getItem("LOCAL-DATA")) {
+      var LocalData = JSON.parse(localStorage.getItem("LOCAL-DATA"));
+      setFilteredItems(LocalData);
+      changeState();
+      return setItemsStore(LocalData);
+    }
+
     fetch("src/DATA/api.json")
       .then((res) => res.json())
       .then((data) => {
@@ -60,8 +76,8 @@ function Main() {
   }, []);
 
   return (
-    <div>
-      <div className="central-container">
+    <div className="central-container">
+      <header>
         <Header />
         <div className="search-container">
           <input
@@ -80,6 +96,8 @@ function Main() {
             <AddBoxIcon /> Publicar
           </Link>
         </div>
+      </header>
+      <main>
         <div
           style={{
             paddingTop: "5px",
@@ -118,7 +136,8 @@ function Main() {
               );
             })}
         {state && <Loading />}
-      </div>
+      </main>
+      <Footer></Footer>
     </div>
   );
 }
