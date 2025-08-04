@@ -7,7 +7,6 @@
   position: relative;
   max-width: 800px;
   margin: auto;
-  border-bottom: 1px solid #b4b4b4;
 }
 .item-preview .image-preview {
   height: 140px;
@@ -22,14 +21,13 @@
 .item-preview {
   font-size: 13px;
   position: relative;
-  padding: 3px;
   cursor: pointer;
   min-height: 130px;
   text-align: start;
   display: flex;
   background: white;
   border: 0;
-  border-top: 1px solid #b4b4b4;
+  border-top: 1px solid black;
   width: 100%;
   padding-bottom: 20px;
   margin: 0;
@@ -64,7 +62,7 @@
   justify-items: center;
 }
 .header-logo .slogan {
-  color: gray;
+  color: black;
   font-size: 0.8rem;
   font-weight: lighter;
   position: absolute;
@@ -116,11 +114,12 @@
 
 @media (max-width: 500px) {
   .item-preview h3 {
-    margin: 10px 0 0 10px;
+    margin-left: 10px;
+    padding: 0;
   }
   .item-preview p {
     margin: 0;
-    margin: 10px 0 0 10px;
+    margin: 3px 0 0 10px;
   }
   .item-preview .data {
     margin: 0;
@@ -133,8 +132,10 @@
     margin: 0;
   }
   .item-preview {
-    font-size: 10px;
+    font-size: 11px;
     padding: 0;
+    padding-top: 10px;
+    padding-bottom: 30px;
     margin: 0;
   }
 }
