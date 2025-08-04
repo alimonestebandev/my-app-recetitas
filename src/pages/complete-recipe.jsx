@@ -1,8 +1,10 @@
 import "../CSS/complete-recipe.css";
+import Header from "../COMPONENTS/header.jsx";
 
 import { useEffect, useState } from "react";
 import store from "../STORE/main.store";
 import BackHomeBtn from "../COMPONENTS/backhome-btn";
+import Footer from "../COMPONENTS/footer.jsx";
 
 function CompleteRecipe() {
   const [item, setItem] = useState([]);
@@ -17,24 +19,32 @@ function CompleteRecipe() {
 
   return (
     <div className="central-container">
-      <BackHomeBtn></BackHomeBtn>
-      <div style={{ paddingTop: "35px" }}>
-        {item.urlImg && <img className="image" src={item.urlImg} alt="" />}
-      </div>
-      <h3 className="title">{item?.title}</h3>
-      <p>{item?.description}</p>
-      <p style={{ fontWeight: "bold" }}>Receta por: {item?.author}</p>
-      <p>{item?.createdAt}</p>
-      {item.ingredients && (
-        <div className="items">
-          <h2>Ingredientes: </h2>
-          <p>{item.ingredients} </p>
+      <header>
+        <Header></Header>
+        <BackHomeBtn></BackHomeBtn>
+      </header>
+      <main>
+        <div style={{ paddingTop: "35px" }}>
+          {item.urlImg && <img className="image" src={item.urlImg} alt="" />}
         </div>
-      )}
-      <div style={{ textAlign: "left" }}>
-        <h3>INSTRUCCIONES</h3>
-        <p>{item?.instructions}</p>
-      </div>
+        <h3 className="title">{item?.title}</h3>
+        <p className="title_cat">Receta por: {item?.author}</p>
+        <p style={{ textAlign: "left", whiteSpace: "pre-line" }}>
+          {item?.description}
+        </p>
+        <p>{item?.createdAt}</p>
+        {item.ingredients && (
+          <div className="items">
+            <h2 className="title_cat">INGREDIENTES: </h2>
+            <p style={{ whiteSpace: "pre-line" }}>{item.ingredients} </p>
+          </div>
+        )}
+        <div style={{ textAlign: "left" }}>
+          <h3 className="title_cat">INSTRUCCIONES</h3>
+          <p style={{ whiteSpace: "pre-line" }}>{item?.instructions}</p>
+        </div>
+      </main>
+      <Footer></Footer>
     </div>
   );
 }
