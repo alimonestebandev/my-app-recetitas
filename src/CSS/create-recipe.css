@@ -1,4 +1,6 @@
 .form-create-recipe {
+  padding: 30px;
+  padding-top: 0;
   display: grid;
   text-align: left;
 }
