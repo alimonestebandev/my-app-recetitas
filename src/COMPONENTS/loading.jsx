@@ -1,14 +1,12 @@
 import BreakfastDiningIcon from "@mui/icons-material/BreakfastDining";
 
-function Loading({ loading }) {
+function Loading() {
   return (
     <div>
-      {loading && (
-        <div className="loading-circle">
-          <BreakfastDiningIcon></BreakfastDiningIcon>
-          Cargando...
-        </div>
-      )}
+      <div className="loading-circle">
+        <BreakfastDiningIcon></BreakfastDiningIcon>
+        Cargando...
+      </div>
     </div>
   );
 }
