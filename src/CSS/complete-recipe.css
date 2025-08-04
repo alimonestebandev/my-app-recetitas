@@ -34,3 +34,9 @@
   display: flex;
   border-bottom-right-radius: 10px;
 }
+.title_cat {
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
