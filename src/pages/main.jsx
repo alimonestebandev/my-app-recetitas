@@ -15,7 +15,7 @@ function Main() {
   const { state, changeState } = useStateLoading();
   const { setRecipeSelected, setItemsStore, items } = store();
 
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState(null);
 
   // const invertItemsList = () => {
   //   console.log(filteredItems);
@@ -53,7 +53,9 @@ function Main() {
   const getDATA = () => {
     if (localStorage.getItem("LOCAL-DATA")) {
       var LocalData = JSON.parse(localStorage.getItem("LOCAL-DATA"));
-      setFilteredItems(LocalData);
+      setItemsStore(LocalData);
+      setFilteredItems(null);
+      // setFilteredItems(LocalData);
       changeState();
       return setItemsStore(LocalData);
     }
