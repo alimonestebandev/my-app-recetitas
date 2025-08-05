@@ -39,7 +39,7 @@ function CompleteRecipe() {
             <p style={{ whiteSpace: "pre-line" }}>{item.ingredients} </p>
           </div>
         )}
-        <div style={{ textAlign: "left" }}>
+        <div style={{ textAlign: "left", paddingBottom: "100px" }}>
           <h3 className="title_cat">INSTRUCCIONES</h3>
           <p style={{ whiteSpace: "pre-line" }}>{item?.instructions}</p>
         </div>
