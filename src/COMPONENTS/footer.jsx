@@ -9,9 +9,15 @@ function Footer() {
       RecetitasApp
       <div className="socials">
         ¡Seguinos en redes!
-        <InstagramIcon title="Instagram" className="icon"></InstagramIcon>
-        <FacebookIcon title="Facebook" className="icon"></FacebookIcon>
-        <XIcon title="X" className="icon"></XIcon>
+        <a href="https://www.instagram.com" target="_BLANK">
+          <InstagramIcon title="Instagram" className="icon"></InstagramIcon>
+        </a>
+        <a href="https://www.facebook.com" target="_BLANK">
+          <FacebookIcon title="Facebook" className="icon"></FacebookIcon>
+        </a>
+        <a href="https://www.x.com" target="_BLANK">
+          <XIcon title="X" className="icon"></XIcon>
+        </a>
       </div>
     </footer>
   );
