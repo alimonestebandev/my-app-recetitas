@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import Footer from "../COMPONENTS/footer.jsx";
 import CoffeeIcon from "@mui/icons-material/Coffee";
 function Main() {
-  const { state, changeState } = useStateLoading();
+  const { isLoading, startLoading, stopLoading } = useStateLoading();
   const {
     setRecipeSelected,
     setItemsStore,
@@ -77,21 +77,22 @@ function Main() {
   };
 
   const getLocalDATA = () => {
+    startLoading();
     setOptionSelected(1);
     if (localStorage.getItem("LOCAL-DATA")) {
       var LocalData = JSON.parse(localStorage.getItem("LOCAL-DATA"));
       setFilteredItems(LocalData);
       setItemsStore(LocalData);
+      stopLoading();
     } else {
       setFilteredItems(null);
       setItemsStore(null);
-    }
-    if (state == true) {
-      changeState();
+      stopLoading();
     }
   };
 
   const getApiDATA = () => {
+    startLoading();
     setOptionSelected(0);
     setItemsStore(null);
     setFilteredItems(null);
@@ -103,13 +104,12 @@ function Main() {
           setFilteredItems(data);
           setErrorMsg(null);
         }
+        stopLoading();
       })
       .catch((error) => {
         setErrorMsg("Error al cargar publicaciones");
+        stopLoading();
       });
-    if (state == true) {
-      changeState();
-    }
   };
   useEffect(() => {
     if (optionSelected == 0) {
@@ -149,7 +149,6 @@ function Main() {
         </div>
         {optionSelected == 1 && (
           <div className="my-recipes-bar">
-            <h4>Mostrar:</h4>
             <select id="filter_option" onChange={applyFilter}>
               <option value="0">Todos</option>
               <option value="1">Favoritos</option>
@@ -165,7 +164,7 @@ function Main() {
           </div>
         )}
       </header>
-      <main>
+      <main className="items-container">
         {/* <div
           style={{
             paddingTop: "5px",
@@ -182,7 +181,7 @@ function Main() {
             <SwapVertIcon></SwapVertIcon>
           </button>
         </div> */}
-        {!state && filteredItems == null
+        {!isLoading && filteredItems == null
           ? items?.map((e, index) => {
               return (
                 <ItemPreview
@@ -203,15 +202,14 @@ function Main() {
                 ></ItemPreview>
               );
             })}
-        {state && <Loading />}
+        {isLoading && <Loading />}
         {errorMsg && optionSelected == 0 && (
           <h4 style={{ color: "red" }}>{errorMsg}</h4>
         )}
-        {(items?.length <= 0 && filteredItems?.length <= 0) ||
-          (items?.length >= 0 && filteredItems?.length <= 0) ||
-          items == [] ||
+        {filteredItems?.length <= 0 ||
+          (items?.length && filteredItems?.length <= 0) ||
           (items == null && (
-            <div style={{ color: "gray" }}>
+            <div style={{ color: "gray", margin: "20px 0 20px 0" }}>
               <CoffeeIcon></CoffeeIcon>
               <h4 style={{ margin: "0", color: "gray", fontWeight: "normal" }}>
                 No hay Recetas para mostrar.
