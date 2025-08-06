@@ -50,7 +50,7 @@ function CreateRecipe() {
 
     var newItems = [newObj];
     if (localData?.length > 0) {
-      localData.push(newObj);
+      localData.unshift(newObj);
       newItems = localData;
     }
     setItemsStore(newItems);
