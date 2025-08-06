@@ -1,13 +1,15 @@
 import { useState } from "react";
 
 const state = () => {
-  const [state, setState] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const changeState = () => {
-    setState(!state);
+  const startLoading = () => {
+    setIsLoading(true);
   };
-
-  return { state, changeState };
+  const stopLoading = () => {
+    setIsLoading(false);
+  };
+  return { isLoading, startLoading, stopLoading };
 };
 
 export default state;
