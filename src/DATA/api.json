@@ -2,6 +2,7 @@
   {
     "id": 0,
     "author": "Jorge",
+    "apiItem": true,
     "title": "Puré de papas con milanesa",
     "description": "Esta receta es muy muy fácil! Ideal para llevar al trabajo si queda algo! O para preparar un sándwich al día siguiente! Usé un peceto entero (Se puede comprar feteado que te ahorraria mucho tiempo) lo corté en fetas finas de 3mm aprox. Para después guardar en el freezer y tener milanesas para otra ocasión. Se puede agregar al huevo otros ingredientes o condimentos, pero para esta oportunidad, use los ingredientes básicos. Mezclé panko y pan rallado, pero tranquilamente se puede utilizar uno u otro!",
     "createdAt": "2/8/2025",
@@ -10,6 +11,7 @@
   },
   {
     "id": 1,
+    "apiItem": true,
     "author": "María Ester",
     "urlImg": "https://img-global.cpcdn.com/recipes/b401588469ec6bbe/640x640sq80/photo.webp",
     "title": "¡IMPRESIONÁ A TU VISITAS! | ¡Bizcochitos Caseros para el mate!",
@@ -19,6 +21,7 @@
   },
   {
     "id": 2,
+    "apiItem": true,
     "author": "CarlosVillamonte33",
     "urlImg": "https://media.ambito.com/p/136b65f52fb3f65f745783fb24ebe77a/adjuntos/239/imagenes/042/492/0042492372/730x0/smart/infusionesjpg.jpg",
     "title": "Infusion relajante 💜",
@@ -28,6 +31,8 @@
   },
   {
     "id": 3,
+    "isFavorite": true,
+    "apiItem": true,
     "author": "CarlosVillamonte33",
     "urlImg": "https://media.elgourmet.com/recetas/cover_6exf2gpw8n_lemon-pie.jpg",
     "title": "LEMON PIE, LA RECETA QUE TANTO BUSCAS ACÁ!",
@@ -38,6 +43,7 @@
   {
     "id": 4,
     "author": "Garfield",
+    "apiItem": true,
     "urlImg": "https://cdn0.recetasgratis.net/es/posts/9/2/8/lasana_57829_orig.jpg",
     "title": "Lasaña",
     "description": "A todo el mundo le encanta la lasaña y nuestra sencilla receta es muy fácil de hacer: la pasta y la salsa se entrelazan perfectamente sin mucho esfuerzo de su parte. Solamente asegúrese de mantener bajo el calor para que la pasta no se cueza de más y el fondo no se queme. Puede preparar la salsa antes. Simplemente recaliente y continúe con la receta. ",
