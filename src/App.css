@@ -21,7 +21,6 @@
 .item-preview {
   font-size: 13px;
   position: relative;
-  cursor: pointer;
   min-height: 130px;
   text-align: start;
   display: flex;
@@ -42,6 +41,7 @@
   margin-left: 4px;
   margin-top: 4px;
   padding: 0;
+  padding-right: 10px;
   text-overflow: ellipsis;
 }
 .item-preview p {
@@ -53,6 +53,17 @@
 }
 .item-preview .data {
   padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+
+  padding-right: 30px;
+  text-decoration: none;
+}
+.item-preview .data:hover {
+  text-decoration: underline;
 }
 
 .header-logo {
@@ -72,15 +83,16 @@
   width: 99%;
   background: white;
   outline: none;
-  border: 1px solid black;
+  border: none;
   border-radius: 10px;
   color: black;
-  height: 100%;
 }
 .search-container {
+  border: 1px solid black;
+  border-radius: 5px;
   display: grid;
   margin-bottom: 10px;
-  grid-template-columns: 10fr 1fr 1fr;
+  grid-template-columns: 11fr 1fr;
   align-items: center;
   align-content: center;
   justify-items: center;
@@ -100,6 +112,7 @@
   padding: none;
   font-weight: bold;
   text-decoration: none;
+  border-left: 1px solid black;
 }
 .btn-searchbar:hover {
   color: blue;
@@ -116,6 +129,7 @@
   .item-preview h3 {
     margin-left: 10px;
     padding: 0;
+    padding-right: 30px;
   }
   .item-preview p {
     margin: 0;
@@ -177,4 +191,79 @@
 }
 .filter-btn-arrows:hover {
   color: blue;
+}
+.item-preview .favorite-icon {
+  color: brown;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  outline: none;
+  border: none;
+  background: none;
+  top: 10px;
+}
+.item-preview .favorite-icon:hover {
+  color: rgb(255, 0, 0);
+}
+
+.header-btns button {
+  height: 30px;
+  color: black;
+  background: none;
+  border: 1px solid gray;
+  margin: 10px 4px 1px 4px;
+  padding: 3px 20px 3px 20px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.header-btns button:hover {
+  background: #c2c2c2;
+  border-color: blue;
+}
+.header-btns .btn-selected {
+  background: black;
+  color: white;
+}
+.header-btns .btn-selected:hover {
+  background: black;
+  color: white;
+}
+.header-btns {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.my-recipes-bar {
+  display: flex;
+  gap: 3px;
+  height: 40px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.my-recipes-bar h4 {
+  font-weight: lighter;
+}
+.my-recipes-bar .btn-create {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 0 10px 0 10px;
+  position: absolute;
+  right: 0;
+  border: 1px solid black;
+  height: 30px;
+  margin: 0;
+  border-radius: 100px;
+  padding: 0px 10px 0 10px;
+}
+.my-recipes-bar .btn-create:hover {
+  background: #c2c2c2;
+  color: blue;
+  border-color: blue;
 }
