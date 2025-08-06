@@ -8,7 +8,7 @@ import Header from "../COMPONENTS/header.jsx";
 
 function CreateRecipe() {
   const [created, setCreated] = useState(false);
-  const { items, setItemsStore } = store();
+  const { setItemsStore } = store();
   const {
     register,
     handleSubmit,
@@ -25,6 +25,8 @@ function CreateRecipe() {
       author,
     } = values;
 
+    var localData = JSON.parse(localStorage.getItem("LOCAL-DATA"));
+
     //Crea un item y lo añade a la lista de items global
 
     var datetime = new Date();
@@ -37,7 +39,7 @@ function CreateRecipe() {
 
     const newObj = {
       createdAt: datetime,
-      id: items.length,
+      id: localData?.length || 0,
       title,
       description,
       author,
@@ -46,8 +48,11 @@ function CreateRecipe() {
       ingredients,
     };
 
-    var newItems = [newObj, ...items];
-
+    var newItems = [newObj];
+    if (localData?.length > 0) {
+      localData.push(newObj);
+      newItems = localData;
+    }
     setItemsStore(newItems);
     setCreated(true);
 
@@ -63,7 +68,6 @@ function CreateRecipe() {
       <h3 style={{ textAlign: "center", paddingTop: "50px" }}>
         Creá una nueva Receta
       </h3>
-      <p>(*) Campos obligatorios</p>
 
       <div>
         {created == false ? (
@@ -72,6 +76,7 @@ function CreateRecipe() {
             className="form-create-recipe"
             action=""
           >
+            <p>(*) Campos obligatorios</p>
             <h4>Direccion URL de Imagen (Opcional)</h4>
             <input
               {...register("urlImg", { required: false, minLength: 5 })}
@@ -142,11 +147,11 @@ function CreateRecipe() {
               type="text"
             />
 
-            <input className="btn-post" type="submit" value="Publicar" />
+            <input className="btn-post" type="submit" value="CREAR" />
           </form>
         ) : (
           <div>
-            <h1>Publicación creada con Exito!</h1>
+            <h1>¡Publicación creada con Exito!</h1>
           </div>
         )}
       </div>
