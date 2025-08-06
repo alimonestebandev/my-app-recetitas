@@ -6,9 +6,8 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 function Footer() {
   return (
     <footer className="footer">
-      RecetitasApp
+      <h5>Developed by Esteban Alimon</h5>
       <div className="socials">
-        ¡Seguinos en redes!
         <a href="https://www.instagram.com" target="_BLANK">
           <InstagramIcon title="Instagram" className="icon"></InstagramIcon>
         </a>
