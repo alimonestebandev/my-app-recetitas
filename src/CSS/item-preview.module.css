@@ -1,0 +1,135 @@
+.image_preview {
+  height: 140px;
+  width: 140px;
+  margin: 0;
+  margin-top: 5px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.item_preview {
+  overflow: hidden;
+  animation: fade_in 200ms linear;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 13px;
+  position: relative;
+  min-height: 130px;
+  text-align: start;
+  display: flex;
+  background: white;
+  border: 0;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  box-shadow: 0px 0px 2px 2px #00000010;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.item_preview:hover {
+  background: whitesmoke;
+  color: blue;
+  border-color: blue;
+}
+.item_preview h3 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  color: #232372;
+  margin: 0;
+  word-break: break-all;
+  margin-left: 4px;
+  margin-top: 4px;
+  padding: 0;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+}
+
+.item_preview p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  color: gray;
+  margin: 0;
+  margin-left: 4px;
+  margin-top: 4px;
+  padding: 0;
+  white-space: pre-line;
+}
+.item_preview .data {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 11fr;
+  gap: 10px;
+  cursor: pointer;
+
+  padding-right: 30px;
+  text-decoration: none;
+}
+.item_preview .data:hover {
+  text-decoration: underline;
+}
+
+.item_preview .data_time {
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+@media (max-width: 800px) {
+  .item_preview h3 {
+    max-width: 100%;
+    overflow: hidden;
+    padding-right: 30px;
+    margin: 0;
+  }
+  .item_preview p {
+    margin: 0;
+    padding-right: 30px;
+    padding-top: 5px;
+  }
+  .item_preview .data {
+    margin: 0;
+    padding: 0;
+  }
+  .image_preview {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+  }
+  .item_preview {
+    font-size: 11px;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin: 0;
+    margin-top: 5px;
+  }
+}
+.favorite_icon {
+  color: brown;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  outline: none;
+  border: none;
+  background: none;
+  top: 10px;
+}
+.favorite_icon:hover {
+  color: rgb(255, 0, 0);
+}

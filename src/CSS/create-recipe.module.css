@@ -1,28 +1,28 @@
-.form-create-recipe {
+.form {
   padding: 15px;
   padding-top: 0;
   display: grid;
   text-align: left;
 }
-.form-create-recipe input {
+.form input {
   height: 30px;
   color: black;
   background: whitesmoke;
   border: 1px solid black;
 }
-.form-create-recipe h4 {
+.form h4 {
   font-weight: lighter;
   margin: 0;
   margin: 10px 0 10px 0px;
 }
-.form-create-recipe textarea {
+.form textarea {
   resize: none;
   color: black;
   background: whitesmoke;
   border: 1px solid black;
   height: 200px;
 }
-.form-create-recipe .btn-post {
+.form .btn_post {
   height: 40px;
   margin-top: 15px;
   background: rgb(45, 123, 212);
@@ -30,4 +30,18 @@
   outline: none;
   color: white;
   font-weight: bold;
+}
+.central_container {
+  height: 97vh;
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+.error_msg {
+  margin: 0;
+  color: red;
+}
+.title {
+  text-align: center;
+  padding-top: 50px;
 }

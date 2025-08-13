@@ -3,14 +3,15 @@ import Header from "../COMPONENTS/header.jsx";
 import ItemPreview from "../COMPONENTS/item.preview.jsx";
 import store from "../STORE/main.store.js";
 import Loading from "../COMPONENTS/loading.jsx";
-import SwapVertIcon from "@mui/icons-material/SwapVert";
 import useStateLoading from "../CUSTOM_HOOKS/state.jsx";
 import SearchIcon from "@mui/icons-material/Search";
-import BreakfastDiningIcon from "@mui/icons-material/BreakfastDining";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import { Link } from "react-router-dom";
 import Footer from "../COMPONENTS/footer.jsx";
 import CoffeeIcon from "@mui/icons-material/Coffee";
+
+import styles from "../CSS/main.module.css";
+
 function Main() {
   const { isLoading, startLoading, stopLoading } = useStateLoading();
   const {
@@ -24,17 +25,6 @@ function Main() {
   const [errorMsg, setErrorMsg] = useState(null);
 
   const [filteredItems, setFilteredItems] = useState([]);
-
-  // const invertItemsList = () => {
-  //   console.log(filteredItems);
-  //   if (filteredItems == null && items) {
-  //     return setFilteredItems(items.reverse());
-  //   } else {
-  //     return setFilteredItems(null);
-  //   }
-  // };
-
-  // useEffect(() => invertItemsList, [setFilteredItems]);
 
   useEffect(() => applyFilter(), [items]);
 
@@ -120,35 +110,35 @@ function Main() {
   }, []);
 
   return (
-    <div className="central-container">
+    <div className={styles.central_container}>
       <header>
         <Header />
-        <div className="search-container">
+        <div className={styles.search_container}>
           <input
             onChange={(e) => searchItem(e)}
-            className="input-search"
+            className={styles.input_search}
             type="text"
           />
-          <button title="Buscar" className="btn-searchbar">
+          <button title="Buscar" className={styles.btn_searchbar}>
             <SearchIcon></SearchIcon>
           </button>
         </div>
-        <div className="header-btns">
+        <div className={styles.header_btns}>
           <button
-            className={optionSelected == 0 ? "btn-selected" : " "}
+            className={optionSelected == 0 ? styles.btn_selected : " "}
             onClick={getApiDATA}
           >
             Novedades
           </button>
           <button
-            className={optionSelected == 1 ? "btn-selected" : " "}
+            className={optionSelected == 1 ? styles.btn_selected : " "}
             onClick={getLocalDATA}
           >
             Mis Recetas
           </button>
         </div>
         {optionSelected == 1 && (
-          <div className="my-recipes-bar">
+          <div className={styles.my_recipes_bar}>
             <select id="filter_option" onChange={applyFilter}>
               <option value="0">Todos</option>
               <option value="1">Favoritos</option>
@@ -156,7 +146,7 @@ function Main() {
             <Link
               to="/create-recipe"
               title="Crear Receta"
-              className="btn-create"
+              className={styles.btn_create}
             >
               <AddBoxIcon />
               <p>Crear Receta</p>
@@ -164,7 +154,7 @@ function Main() {
           </div>
         )}
       </header>
-      <main className="items-container">
+      <main className={styles.items_container}>
         {/* <div
           style={{
             paddingTop: "5px",

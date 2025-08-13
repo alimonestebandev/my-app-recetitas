@@ -1,0 +1,13 @@
+.header_logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+.header_logo .slogan {
+  color: black;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  position: absolute;
+  right: 0;
+}

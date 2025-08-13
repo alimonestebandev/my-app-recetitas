@@ -1,6 +1,5 @@
-import "../CSS/complete-recipe.css";
+import styles from "../CSS/complete-recipe.module.css";
 import Header from "../COMPONENTS/header.jsx";
-
 import { useEffect, useState } from "react";
 import store from "../STORE/main.store";
 import BackHomeBtn from "../COMPONENTS/backhome-btn";
@@ -18,30 +17,34 @@ function CompleteRecipe() {
   }, []);
 
   return (
-    <div className="central-container">
+    <div className={styles.central_container}>
       <header>
         <Header></Header>
         <BackHomeBtn></BackHomeBtn>
       </header>
       <main>
         <div style={{ paddingTop: "35px" }}>
-          {item.urlImg && <img className="image" src={item.urlImg} alt="" />}
+          {item.urlImg && (
+            <img
+              className={styles.image}
+              src={item.urlImg}
+              alt={"imagen de " + item.title}
+            />
+          )}
         </div>
-        <h3 className="title">{item?.title}</h3>
-        <p className="title_cat">Receta por: {item?.author}</p>
-        <p style={{ textAlign: "left", whiteSpace: "pre-line" }}>
-          {item?.description}
-        </p>
+        <h3 className={styles.title}>{item?.title}</h3>
+        <p className={styles.title_cat}>Receta por: {item?.author}</p>
+        <p className={styles.text_white_space}>{item?.description}</p>
         <p>{item?.createdAt}</p>
         {item.ingredients && (
-          <div className="items">
-            <h2 className="title_cat">INGREDIENTES: </h2>
-            <p style={{ whiteSpace: "pre-line" }}>{item.ingredients} </p>
+          <div className={styles.items}>
+            <h2 className={styles.title_cat}>INGREDIENTES: </h2>
+            <p className={styles.text_white_space}>{item.ingredients} </p>
           </div>
         )}
-        <div style={{ textAlign: "left", paddingBottom: "100px" }}>
-          <h3 className="title_cat">INSTRUCCIONES</h3>
-          <p style={{ whiteSpace: "pre-line" }}>{item?.instructions}</p>
+        <div className={styles.instructions_container}>
+          <h3 className={styles.title_cat}>INSTRUCCIONES</h3>
+          <p className={styles.text_white_space}>{item?.instructions}</p>
         </div>
       </main>
       <Footer></Footer>

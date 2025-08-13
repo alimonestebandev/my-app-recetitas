@@ -2,6 +2,7 @@ import store from "../STORE/main.store";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import styles from "../CSS/item-preview.module.css";
 
 function ItemPreview({ item }) {
   const {
@@ -30,15 +31,19 @@ function ItemPreview({ item }) {
   };
 
   return (
-    <div title="ver más" className="item-preview">
-      <Link to="/see-recipe" onClick={() => selectRecipe()} className="data">
+    <div title="ver más" className={styles.item_preview}>
+      <Link
+        to="/see-recipe"
+        onClick={() => selectRecipe()}
+        className={styles.data}
+      >
         <img
-          className="image-preview"
+          className={styles.image_preview}
           src={
             urlImg ||
             "https://uxwing.com/wp-content/themes/uxwing/download/food-and-drinks/food-dinner-icon.png"
           }
-          alt=""
+          alt={"imagen de " + item.title}
         />
         <div>
           <h3>{title}</h3>
@@ -46,7 +51,7 @@ function ItemPreview({ item }) {
         </div>
       </Link>
       {!apiItem && (
-        <button onClick={() => setFavorite()} className="favorite-icon">
+        <button onClick={() => setFavorite()} className={styles.favorite_icon}>
           {isFavorite ? (
             <FavoriteIcon></FavoriteIcon>
           ) : (
@@ -54,7 +59,7 @@ function ItemPreview({ item }) {
           )}
         </button>
       )}
-      <div className="data-time">
+      <div className={styles.data_time}>
         <p>Creado por: {author || "undefined"}</p>
         {createdAt && <p>| Fecha: {createdAt}</p>}
       </div>

@@ -9,21 +9,20 @@
   padding: 10px 0 30px 0px;
   position: relative;
 }
-.footer .socials {
+.socials {
   position: absolute;
   right: 0;
   display: flex;
   align-items: center;
   gap: 3px;
 }
-.footer .socials a {
+.icon {
   display: flex;
   align-items: center;
-}
-.footer .socials .icon {
-  color: black;
   transition: all 200ms;
+  color: black;
 }
-.footer .socials .icon:hover {
+.icon:hover {
   transform: scale(1.4);
+  transition: all 200ms;
 }

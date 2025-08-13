@@ -1,0 +1,161 @@
+.central_container {
+  height: 97vh;
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+select {
+  background: none;
+  color: black;
+  border: 1px solid black;
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px;
+}
+
+.input_search {
+  width: 99%;
+  background: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: black;
+}
+.search_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: grid;
+  margin-bottom: 10px;
+  grid-template-columns: 11fr 1fr;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+.btn_searchbar {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  background: none;
+  color: black;
+  border: none;
+  margin: none;
+  padding: none;
+  font-weight: bold;
+  text-decoration: none;
+  border-left: 1px solid black;
+}
+.btn_searchbar:hover {
+  color: blue;
+}
+
+.loading_circle {
+  display: flex;
+  justify-items: center;
+  font-size: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto 100px auto;
+  height: 100px;
+  width: 100px;
+  border: 5px solid gray;
+  border-bottom: 5px solid blue;
+  transition: all 100ms;
+  animation: circle-loading 1s linear infinite;
+  border-radius: 100%;
+}
+@keyframes circle-loading {
+  0% {
+    opacity: 0%;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 10%;
+    transform: rotate(360deg);
+  }
+}
+.filter_btn_arrows {
+  background: none;
+  right: 10px;
+  position: absolute;
+  color: black;
+  border: none;
+  margin: 0;
+}
+.filter_btn_arrows:hover {
+  color: blue;
+}
+
+.header_btns button {
+  height: 30px;
+  color: black;
+  background: none;
+  border: 1px solid gray;
+  margin: 10px 10px 1px 0px;
+  padding: 3px 20px 3px 20px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.header_btns button:hover {
+  background: #c2c2c2;
+  border-color: blue;
+}
+.header_btns .btn_selected {
+  background: black;
+  color: white;
+}
+.header_btns .btn-selected:hover {
+  background: black;
+  color: white;
+}
+.header_btns {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.my_recipes_bar {
+  margin-bottom: 20px;
+  padding: 5px 0 5px 0;
+  display: flex;
+  gap: 3px;
+  height: 40px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.my_recipes_bar h4 {
+  font-weight: lighter;
+}
+.my_recipes_bar .btn_create {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 0 10px 0 10px;
+  position: absolute;
+  right: 0;
+  border: 1px solid black;
+  height: 30px;
+  margin: 0;
+  border-radius: 15px;
+  padding: 0px 10px 0 10px;
+}
+.my_recipes_bar .btn_create:hover {
+  background: #c2c2c2;
+  color: blue;
+  border-color: blue;
+}
+
+.items_container {
+  border-top: 1px solid black;
+}
