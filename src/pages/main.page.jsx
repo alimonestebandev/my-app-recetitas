@@ -86,7 +86,7 @@ function MainPage() {
     setOptionSelected(0);
     setItemsStore(null);
     setFilteredItems(null);
-    fetch("src/DATA/api.json")
+    fetch("api.json")
       .then((res) => res.json())
       .then((data) => {
         if (data.length >= 1) {
