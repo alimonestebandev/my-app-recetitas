@@ -198,7 +198,7 @@ function MainPage() {
         )}
         {filteredItems?.length <= 0 ||
           (items?.length && filteredItems?.length <= 0) ||
-          (items == null && (
+          (items == null && !isLoading && (
             <div style={{ color: "gray", margin: "20px 0 20px 0" }}>
               <CoffeeIcon></CoffeeIcon>
               <h4 style={{ margin: "0", color: "gray", fontWeight: "normal" }}>

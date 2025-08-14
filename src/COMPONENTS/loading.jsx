@@ -1,7 +1,9 @@
+import styles from "../CSS/main.module.css";
+
 function Loading() {
   return (
     <div>
-      <div className="loading-circle"></div>
+      <div className={styles.loading_circle}></div>
     </div>
   );
 }
