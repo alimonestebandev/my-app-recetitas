@@ -1,9 +1,9 @@
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainPage from "./PAGES/main.page.jsx";
-import CompleteRecipe from "./PAGES/complete-recipe.jsx";
-import CreateRecipe from "./PAGES/create-recipe.jsx";
+import MainPage from "./pages/main.page.jsx";
+import CompleteRecipe from "./pages/complete-recipe.jsx";
+import CreateRecipe from "./pages/create-recipe.jsx";
 
 function App() {
   return (

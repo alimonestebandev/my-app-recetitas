@@ -1,8 +1,8 @@
 import styles from "../CSS/complete-recipe.module.css";
 import Header from "../COMPONENTS/header.jsx";
 import { useEffect, useState } from "react";
-import store from "../STORE/main.store";
-import BackHomeBtn from "../COMPONENTS/backhome-btn";
+import store from "../STORE/main.store.js";
+import BackHomeBtn from "../COMPONENTS/backhome-btn.jsx";
 import Footer from "../COMPONENTS/footer.jsx";
 
 function CompleteRecipe() {

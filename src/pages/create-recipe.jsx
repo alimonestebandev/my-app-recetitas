@@ -1,4 +1,4 @@
-import BackHomeBtn from "../COMPONENTS/backhome-btn";
+import BackHomeBtn from "../COMPONENTS/backhome-btn.jsx";
 import styles from "../CSS/create-recipe.module.css";
 import { useForm } from "react-hook-form";
 import store from "../STORE/main.store.js";
