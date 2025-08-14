@@ -12,7 +12,7 @@ import CoffeeIcon from "@mui/icons-material/Coffee";
 
 import styles from "../CSS/main.module.css";
 
-function Main() {
+function MainPage() {
   const { isLoading, startLoading, stopLoading } = useStateLoading();
   const {
     setRecipeSelected,
@@ -213,4 +213,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainPage;
